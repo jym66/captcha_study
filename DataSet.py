@@ -51,8 +51,7 @@ class CustomImageDataset(Dataset):
 
 def load_train_data():
     dataset = CustomImageDataset("/Users/binary/PycharmProjects/DeepLearing/captcha", transform)
-
-    return torch.utils.data.DataLoader(dataset, batch_size=32, shuffle=True)
+    return torch.utils.data.DataLoader(dataset, batch_size=64, shuffle=True)
 
 
 def load_test_data():

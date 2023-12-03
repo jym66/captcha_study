@@ -69,7 +69,7 @@ if __name__ == '__main__':
     criterion = nn.MultiLabelSoftMarginLoss()
     optimizer = optim.Adam(model.parameters(), lr=0.001)
     # 训练模型
-    num_epochs = 10
+    num_epochs = 20
     for epoch in range(num_epochs):
         for inputs, labels in train_loader:
             # 将数据和标签移至 GPU（如果可用）
