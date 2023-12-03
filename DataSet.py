@@ -14,6 +14,7 @@ transform = transforms.Compose([
 #
 char_list = list(string.ascii_letters + string.digits)
 chars_dict = {char: idx for idx, char in enumerate(char_list)}
+data_path = "/kaggle/input/captcha/captcha"
 
 
 class CustomImageDataset(Dataset):
@@ -50,10 +51,10 @@ class CustomImageDataset(Dataset):
 
 
 def load_train_data():
-    dataset = CustomImageDataset("/Users/binary/PycharmProjects/DeepLearing/captcha", transform)
+    dataset = CustomImageDataset(data_path, transform)
     return torch.utils.data.DataLoader(dataset, batch_size=64, shuffle=True)
 
 
 def load_test_data():
-    dataset = CustomImageDataset("/Users/binary/PycharmProjects/DeepLearing/captcha", transform)
+    dataset = CustomImageDataset(data_path, transform)
     return torch.utils.data.DataLoader(dataset, batch_size=1, shuffle=False)
