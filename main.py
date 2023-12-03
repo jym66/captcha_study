@@ -77,17 +77,14 @@ if __name__ == '__main__':
             # 将标签转换为浮点数
             labels = labels.float().squeeze(1)
             outputs = model(inputs)
-            # outputs = outputs.view(-1, 62)
-            # print("labels shape", labels.shape)
-            # print("outputs shape", outputs.shape)
             loss = criterion(outputs, labels)
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
         print(f'Epoch [{epoch + 1}/{num_epochs}], Loss: {loss.item():.4f}')
         if num_epochs % 5 == 0:
-            print(f"保存模型 mnist_cnn{loss.item():.4f}")
-            torch.save(model.state_dict(), f'mnist_cnn{loss.item():.4f}.pth')
+            print(f"保存模型 mnist_cnn.pth")
+            torch.save(model.state_dict(), f'mnist_cnn.pth')
 
     # 保存模型
     torch.save(model.state_dict(), 'mnist_cnn.pth')

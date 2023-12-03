@@ -3,9 +3,7 @@ from main import Net
 import string
 import torch.utils.data
 import DataSet
-
 # 加载数据集
-train_dataset = DataSet.dataset
 train_loader = DataSet.load_test_data()
 
 char_list = list(string.ascii_letters + string.digits)
@@ -22,4 +20,4 @@ for inputs, labels in train_loader:
     if output == labels:
         correct += 1
     print(output, labels)
-print(correct / 100)
+print(correct)
