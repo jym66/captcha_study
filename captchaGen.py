@@ -31,7 +31,7 @@ def gen_captcha_text_and_image():
     captcha = image.generate(captcha_text)
 
     # 使用 with open 保存验证码图片到本地
-    file_path = "./captcha/" + captcha_text + ".png"  # 您可以修改路径和文件名格式
+    file_path = "./captcha1/" + captcha_text + ".png"  # 您可以修改路径和文件名格式
     with open(file_path, 'wb') as f:
         f.write(captcha.read())
 
@@ -42,5 +42,5 @@ def gen_captcha_text_and_image():
 
 if __name__ == '__main__':
     # 生成验证码并显示
-    for i in range(50000):
+    for i in range(5000):
         text, image, file_path = gen_captcha_text_and_image()

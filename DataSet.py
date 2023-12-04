@@ -14,7 +14,7 @@ transform = transforms.Compose([
 #
 char_list = list(string.ascii_letters + string.digits)
 chars_dict = {char: idx for idx, char in enumerate(char_list)}
-data_path = "/kaggle/input/captcha/captcha"
+data_path = "/Users/binary/PycharmProjects/DeepLearing/captcha"
 
 
 class CustomImageDataset(Dataset):

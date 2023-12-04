@@ -1,4 +1,3 @@
-import DataSet
 from main import Net
 import string
 import torch.utils.data
@@ -8,7 +7,7 @@ train_loader = DataSet.load_test_data()
 
 char_list = list(string.ascii_letters + string.digits)
 model = Net()
-model.load_state_dict(torch.load("mnist_cnn.pth", map_location=torch.device('cpu')))
+model.load_state_dict(torch.load("model.pth", map_location=torch.device('cpu')))
 model.eval()
 correct = 0
 for inputs, labels in train_loader:
@@ -19,5 +18,5 @@ for inputs, labels in train_loader:
     output = ''.join([char_list[i] for i in torch.argmax(output, 1)])
     if output == labels:
         correct += 1
-    print(output, labels)
+    # print(output, labels)
 print(correct)
