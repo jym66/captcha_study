@@ -9,6 +9,7 @@
 
 3.**生成验证码包含大写字母、小写字母、数字.**
 
+***
 ### 效果 
 1. 用1w张验证码训练了15个Epoch
 >Epoch [5/15], Loss: 0.1717  
@@ -19,7 +20,14 @@ Epoch [15/15], Loss: 0.1412
 
 #### 使用
 1.**运行captchaGen.py生成验证码**
+> 会生成test_captcha和train_captcha文件夹
+> 可以在setting.py里修改生成的数量
 
 2.**运行main.py进行训练，得到一个模型 model.pth.**
+
+3.**运行pred.py进行验证**
+
+***
+#### model.pth已上传可以测试
 
 
